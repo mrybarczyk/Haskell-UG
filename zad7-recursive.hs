@@ -8,5 +8,3 @@ fib n = do
    n
   else 
    fib (n-1) + fib (n-2)
-
- 
