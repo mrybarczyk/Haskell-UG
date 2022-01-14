@@ -10,33 +10,56 @@
 -- h) map f l that will apply function f to all elements of the list l
 
 -- a)
+append :: [a] -> [a] -> [a]
 append l m = do
  l++m
 
 -- b)
+member :: Eq a => a -> [a] -> Bool
 member _ [] = False
 member x (l:lt)
  | l == x = True
  | otherwise = member x lt
 
 -- c)
+reverse :: [a] -> [a]
 reverse lt = foldl (\acc l-> l : acc) [] lt
 
 -- d)
+last :: Eq a => [a] -> a
 last (l:lt)
  | lt == [] = l
  | otherwise = Main.last lt
 
 -- e)
+delete :: Eq a => a -> [a] -> [a]
 delete _ [] = []
 delete x (l:lt) 
  | x == l = delete x lt
  | otherwise = l : delete x lt
 
 -- f)
+pairing :: [a] -> [a] -> [(a,a)]
 pairing (l1:l1t) (l2:l2t) = do
  if length l1t == length l2t
   then do
    [(l1, l2)]
   else
    []
+
+-- g)
+-- split _ [] = ([], [])
+-- split x (l:lt) = do
+--  if l > x
+--   then do
+--    -
+--   else
+--    -
+--  -
+
+-- h)
+-- it's literally map as defined in Prelude :x
+f x = x*x
+map' :: (a -> b) -> [a] -> [b]
+map' _ []       = []
+map' f (x : xs) = f x : map' f xs
