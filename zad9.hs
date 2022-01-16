@@ -58,7 +58,7 @@ pairing (l1:l1t) (l2:l2t) = do
 --  -
 
 -- h)
--- it's literally map as defined in Prelude :x
+-- it's literally map as defined in Prelude :x but with apostrophe
 f x = x*x
 map' :: (a -> b) -> [a] -> [b]
 map' _ []       = []
